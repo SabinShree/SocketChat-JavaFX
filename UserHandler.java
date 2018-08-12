@@ -13,6 +13,7 @@ class UserHandler implements Runnable {
 
     @Override
     public void run() {
+        try{
         String message;
 //        BufferedReader bufferedReader = new BufferedReader((this.user.getInputStream()));
         Scanner scanner = new Scanner(this.user.getInputStream());
@@ -25,14 +26,15 @@ class UserHandler implements Runnable {
                     String userPrivate = message.substring(1, firstSpace);
                     server.sendMessageToUsers(message.substring(firstSpace + 1), user, userPrivate);
                 }
-            } else if (message.startsWith("#")) {
-            } else {
+                else {
                 server.displayToAllUsers(message, user);
             }
         }
         server.removeUsers(user);
-//        this.server.SendMessageToAllUsers();
         scanner.close();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 
