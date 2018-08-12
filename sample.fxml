@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="538.0"
+            prefWidth="804.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="LastAppForChatting.Controller">
+    <bottom>
+        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;" BorderPane.alignment="CENTER">
+            <children>
+                <JFXTextField fx:id="chatText" onAction="#OnKeyTyped" alignment="TOP_LEFT" labelFloat="true"
+                              prefHeight="74.0" prefWidth="586.0" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="20.0"/>
+                    </padding>
+                    <HBox.margin>
+                        <Insets left="10.0" top="20.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </JFXTextField>
+                <JFXButton fx:id="sendButton" alignment="CENTER" buttonType="RAISED" onAction="#sendMessage"
+                           prefHeight="52.0" prefWidth="175.0" ripplerFill="#a43838"
+                           style="-fx-background-color: green;" text="Send" textAlignment="CENTER" textFill="#e1e1e1"
+                           underline="true" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets left="20.0" right="10.0" top="40.0"/>
+                    </HBox.margin>
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </JFXButton>
+            </children>
+        </HBox>
+    </bottom>
+    <center>
+        <JFXTextArea fx:id="chatMessage" labelFloat="true" prefColumnCount="0" prefHeight="440.0" prefWidth="800.0"
+                     wrapText="true" BorderPane.alignment="TOP_LEFT"/>
+    </center>
+    <top>
+        <FlowPane hgap="20.0" prefHeight="53.0" prefWidth="804.0" style="-fx-border-color: black;"
+                  BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="ip"/>
+                <TextField fx:id="port"/>
+                <TextField fx:id="userName"/>
+                <JFXButton fx:id="connectButton" buttonType="RAISED" defaultButton="true" onAction="#connectToServer"
+                           prefHeight="31.0" prefWidth="157.0" style="-fx-background-color: grey;" text="Connect"
+                           textFill="#f8f8f8"/>
+            </children>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <padding>
+                <Insets left="20.0" top="10.0"/>
+            </padding>
+        </FlowPane>
+    </top>
+</BorderPane>
