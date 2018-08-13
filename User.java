@@ -7,13 +7,10 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 class User {
-    private static int nbUser = 0;
-    private int userId;
     private PrintWriter printWriter;
     private BufferedReader bufferedReader;
     private String nickname;
     private Socket client;
-    private String color;
 
     // constructor
     User(Socket client, String name) throws IOException {
@@ -21,9 +18,6 @@ class User {
         this.bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
         this.client = client;
         this.nickname = name;
-        this.userId = nbUser;
-//        this.color = ColorInt.getColor(this.userId);
-        nbUser += 1;
     }
 
     PrintWriter getOutStream() {
