@@ -24,7 +24,8 @@ class UserHandler implements Runnable {
                     System.out.println("Private Message : " + message);
                     int firstSpace = message.indexOf(" ");
                     String userPrivate = message.substring(1, firstSpace);
-                    server.sendMessageToUsers(message.substring(firstSpace + 1), user, userPrivate);
+                    String messagePrivate = message.substring(firstSpace + 1);
+                    server.sendMessageToUsers(messagePrivate, user, userPrivate);
                 }
                 else {
                 server.displayToAllUsers(message, user);
