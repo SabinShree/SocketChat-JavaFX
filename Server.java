@@ -65,7 +65,7 @@ public class Server extends Thread {
             if (client.getNickname().equals(user) && client != userSender) {
                 find = true;
                 userSender.getOutStream().println(userSender.toString() + " -> " + client.toString() + " : " + msg);
-                client.getOutStream().println("Private  : " + userSender.toString());
+                client.getOutStream().println("Private  : " + msg);
             }
         }
         if (!find) {
