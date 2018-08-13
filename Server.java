@@ -17,7 +17,7 @@ public class Server extends Thread {
     }
 
     public static void main(String[] args) {
-        new Server(12345).run();
+        new Server(12345).start();
     }
 
     @Override
