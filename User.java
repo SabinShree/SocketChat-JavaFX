@@ -6,29 +6,29 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-class User {
+public class User {
     private PrintWriter printWriter;
     private BufferedReader bufferedReader;
     private String nickname;
     private Socket client;
 
     // constructor
-    User(Socket client, String name) throws IOException {
+    protected User(Socket client, String name) throws IOException {
         this.printWriter = new PrintWriter(client.getOutputStream(), true);
         this.bufferedReader = new BufferedReader(new InputStreamReader(client.getInputStream()));
         this.client = client;
         this.nickname = name;
     }
 
-    PrintWriter getOutStream() {
+    public PrintWriter getOutStream() {
         return this.printWriter;
     }
 
-    BufferedReader getInputStream() {
+   public BufferedReader getInputStream() {
         return this.bufferedReader;
     }
 
-    String getNickname() {
+    public String getNickname() {
         return this.nickname;
     }
 
