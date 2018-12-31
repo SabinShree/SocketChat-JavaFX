@@ -7,4 +7,4 @@ Supported both group and single user chat.
 type @username"space"msg
 ## To run : 
 1. Run the server first.
-2. Runing the Main method for the client window. 
+2. Running the Main method for the client window. 
